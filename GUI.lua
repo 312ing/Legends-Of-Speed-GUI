@@ -17,6 +17,12 @@ end)
 
 --Anti Slip
 spawn(function()
+    spawn(function()
+        while wait() do
+            game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.FallingDown, false)
+            game.Players.LocalPlayer.Character.Humanoid:SetStateEnabled(Enum.HumanoidStateType.Ragdoll, false)
+        end
+    end)
     while task.wait(1) do
         if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
             if not game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyGyro") then
